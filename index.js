@@ -11,10 +11,10 @@ const HandleMsg = require('./HandleMsg')
 
 const start = async (urbae = new urbae()) => {
     console.log(color('------------------------------------------------------------------------', 'white'))
-    console.log(color(figlet.textSync('Urbaeexyz Bot', { font: 'Ghost', horizontalLayout: 'default' })))
+    console.log(color(figlet.textSync('AdyyBotz', { font: 'Ghost', horizontalLayout: 'default' })))
     console.log(color('------------------------------------------------------------------------', 'white'))
-    console.log(color('[CREATOR]', 'aqua'), color('Thoriq Azzikra', 'magenta'))
-    console.log(color('[BOT]', 'aqua'), color('URBAE BOT is now Online!', 'magenta'))
+    console.log(color('[CREATOR]', 'aqua'), color('Adii', 'magenta'))
+    console.log(color('[BOT]', 'aqua'), color('ADYY BOT is now Online!', 'magenta'))
     console.log(color('[VER]', 'aqua'), color('2.7.0', 'magenta'))
     urbae.onStateChanged((state) => {
         console.log(color('-> [STATE]'), state)
@@ -29,10 +29,10 @@ const start = async (urbae = new urbae()) => {
     })
 	})
 
-    urbae.onAddedToGroup(async (chat) => {
+    /*urbae.onAddedToGroup(async (chat) => {
         await urbae.sendText(chat.groupMetadata.id, 'Terima kasih sudah memasukkan bot kedalam grup kalian')
         await urbae.leaveGroup(chat.groupMetada.id)
-    })
+    })*/
 
     urbae.onGlobalParticipantsChanged((async (heuh) => {
         await welcome(urbae, heuh)
