@@ -255,7 +255,7 @@ module.exports = HandleMsg = async (urbae, message) => {
 		const StickerMetadatacrop = { author: authorstc, pack: packstc, keepScale: false }
 
 		// [IDENTIFY]
-		const ownerNumber = "628xx@c.us"
+		const ownerNumber = "60199782326@c.us"
 		const errorImg = "https://i.ibb.co/DYLd6fk/baukrysie.jpg"
 		const isOwnerBot = ownerNumber.includes(pengirim)
 		const isOwner = ownerNumber.includes(pengirim)
@@ -285,7 +285,7 @@ module.exports = HandleMsg = async (urbae, message) => {
 			} else {
 				var pfp = ras
 			}
-			urbae.reply(from, 'ngapain tag Thoriq?\npc aja kali sabii', id).then(() => {
+			urbae.reply(from, 'ngapain tag adii?\npc aja kali sabii', id).then(() => {
 				urbae.sendFileFromUrl(ownerNumber, pfp, 'img.jpg', `*Note Call*\n\n*From:* ${pushname}\n*Group:* ${name}\n*Nomor:* wa.me/${serial.replace(/@c.us/g, '')}\n*Text:* ${chats}`)
 			})
 		}
@@ -462,7 +462,7 @@ module.exports = HandleMsg = async (urbae, message) => {
 
 
 		//fitur anti link
-		if (isGroupMsg && GroupLinkDetector && !isGroupAdmins && !isOwner) {
+		/*if (isGroupMsg && GroupLinkDetector && !isGroupAdmins && !isOwner) {
 			if (chats.match(/(https:\/\/chat.whatsapp.com)/gi)) {
 				const inviteLink1 = await urbae.getGroupInviteLink(groupId);
 				if (chats.includes(inviteLink1)) return urbae.reply(from, `Ini Link Group *${name}* Kamu tidak akan dikick`, id)
@@ -475,7 +475,7 @@ module.exports = HandleMsg = async (urbae, message) => {
 					})
 				}
 			}
-		}
+		}*/
 
 		// Leveling [BETA] by Slavyan
 		if (isGroupMsg && !level.isGained(sender.id) && !isBanned && isLevelingOn) {
@@ -519,7 +519,7 @@ module.exports = HandleMsg = async (urbae, message) => {
 		]
 
 
-		const menupict = "https://i.ibb.co/fxY3Hbp/Whats-App-Image-2021-11-24-at-15-39-01.jpg"
+		const menupict = "https://telegra.ph/file/34f20ffa83254fa091577.png"
 
 		const apakah = [
 			'Ya',
@@ -686,7 +686,7 @@ module.exports = HandleMsg = async (urbae, message) => {
 					await urbae.reply(from, menus, id)
 					break
 				case prefix + 'help':
-					const bots = `Hi ${pushname}, this is Urbae Bot, to find out the commands menu, type *${prefix}menu* , *${prefix}p*`
+					const bots = `Hi ${pushname}, this is Adyy Bot, to find out the commands menu, type *${prefix}menu* , *${prefix}p*`
 					await urbae.reply(from, bots, id)
 					break
 				case prefix + 'rbts':
