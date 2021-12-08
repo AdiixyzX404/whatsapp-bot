@@ -228,7 +228,7 @@ module.exports = HandleMsg = async (urbae, message) => {
 		// Bot Prefix
 		const commands = caption || body || ''
 		const command = commands.toLowerCase().split(' ')[0] || ''
-		const prefix = /^[°•π÷×¶∆£¢€¥®™✓=|~`,*zxcv!?@#$%^&.\/\\©^]/.test(command) ? command.match(/^[!?#$,^.,/\/\\©^]/gi) : '-'
+		const prefix = /^[°•π÷×¶∆£¢€¥®™✓=|~`,*zxcv!@#$%^&.\/\\©^]/.test(command) ? command.match(/^[!#$,^.,/\/\\©^]/gi) : '-'
 		global.prefix
 		body = (type === 'chat' && body.startsWith(prefix)) ? body : (((type === 'image' || type === 'video') && caption) && caption.startsWith(prefix)) ? caption : ''
 		const arg = body.trim().substring(body.indexOf(' ') + 1)
@@ -345,7 +345,7 @@ module.exports = HandleMsg = async (urbae, message) => {
 			nsfwalready: 'Fitur NSFW sudah aktif sebelumnya di grup ini',
 			nsfwoff: 'Fitur NSFW berhasil dimatikan',
 			nsfwon: 'Fitur NSFW berhasil diaktifkan',
-			prem: `Command Premium!\nHalo ${pushname} Mau menjadi user premium? ga mahal kok bang\n\n20rb = PREMIUM SAMPE KIAMAT\n\nJika anda berminat, silahkan chat pada Owner\n\nwa.me/${ownerNumber.replace('@c.us', '')}\n\nTrims~\n-Thoriq Azzikra`,
+			prem: `Command Premium!\nHalo ${pushname} Mau menjadi user premium? ga mahal kok bang\n\ngratis = PREMIUM SAMPE KIAMAT\n\nJika anda berminat, silahkan chat pada Owner\n\nwa.me/${ownerNumber.replace('@c.us', '')}\n\nTrims~\n-Adii`,
 			error: {
 				St: `[❗] Kirim gambar dengan caption *${prefix}sticker* atau tag gambar yang sudah dikirim`,
 				Ti: `[❗] Replay sticker dengan caption *${prefix}stickertoimg* atau tag sticker yang sudah dikirim`,
@@ -382,7 +382,7 @@ module.exports = HandleMsg = async (urbae, message) => {
 		if (liststicker.includes(chats))
 			try {
 				const getstick = await fs.readFileSync('./media/pic/sticker/' + chats + '.jpeg', { encoding: "base64" })
-				await urbae.sendImageAsSticker(from, `data:image/jpeg;base64,${getstick.toString('base64')}`, { author: "Urbaeexyz", pack: chats, keepScale: true })
+				await urbae.sendImageAsSticker(from, `data:image/jpeg;base64,${getstick.toString('base64')}`, { author: "Adii", pack: chats, keepScale: true })
 			} catch {
 				urbae.reply(from, 'Maaf, sistem error', id)
 			}
@@ -743,7 +743,7 @@ module.exports = HandleMsg = async (urbae, message) => {
 						})
 					break
 				case prefix + 'runtime':
-					urbae.reply(from, `*Bot has been active for ${cts}*`, id)
+					urbae.reply(from, `${cts}`, id)
 					break
 				case prefix + 'eval':
 				case prefix + 'ev':
@@ -5998,7 +5998,7 @@ module.exports = HandleMsg = async (urbae, message) => {
 					break
 
 				//Owner Group
-				case prefix + 'kickall': //mengeluarkan semua member
+				/*case prefix + 'kickall': //mengeluarkan semua member
 					if (!isGroupMsg) return urbae.reply(from, 'Maaf, perintah ini hanya dapat dipakai didalam grup!', id)
 					let isOwnerGroup = sender.id === chat.groupMetadata.owner
 					if (!isOwnerGroup) return urbae.reply(from, 'Maaf, perintah ini hanya dapat digunakan oleh Owner Grup!', id)
@@ -6012,7 +6012,7 @@ module.exports = HandleMsg = async (urbae, message) => {
 						}
 					}
 					urbae.reply(from, 'Success kick all member', id)
-					break
+					break*/
 
 				//Owner Bot	
 				case prefix + 'oblock':
@@ -6498,7 +6498,7 @@ _Desc di update oleh : @${chat.groupMetadata.descOwner.replace('@c.us', '')} pad
 						bacotanmu += '╠➥'
 						bacotanmu += ` ${bacul[i]}\n`
 					}
-					bacotanmu += '╚═〘 *U R B A E  B O T* 〙'
+					bacotanmu += '╚═〘 *AdyyBOT* 〙'
 					await urbae.reply(from, bacotanmu, id)
 					break
 				case prefix + 'premlist':
@@ -6508,7 +6508,7 @@ _Desc di update oleh : @${chat.groupMetadata.descOwner.replace('@c.us', '')} pad
 						kuntul += `╠➥`
 						kuntul += `${premlist[i].replace(/@c.us/g, '')}\n`
 					}
-					kuntul += '╚═〘 *U R B A E  B O T* 〙'
+					kuntul += '╚═〘 *AdyyBOT* 〙'
 					await urbae.reply(from, kuntul, id)
 					break
 				case prefix + 'listcecan':
@@ -6556,7 +6556,7 @@ _Desc di update oleh : @${chat.groupMetadata.descOwner.replace('@c.us', '')} pad
 						kemtull += '╠➥'
 						kemtull += `${imagick[i]}\n`
 					}
-					kemtull += '╚═〘 *U R B A E  B O T* 〙'
+					kemtull += '╚═〘 *AdyyBOT* 〙'
 					await urbae.reply(from, kemtull, id)
 					break
 				case prefix + 'listvn':
@@ -6566,7 +6566,7 @@ _Desc di update oleh : @${chat.groupMetadata.descOwner.replace('@c.us', '')} pad
 						kemtul += '╠➥'
 						kemtul += `${vnlist[i]}\n`
 					}
-					kemtul += '╚═〘 *U R B A E  B O T* 〙'
+					kemtul += '╚═〘 *AdyyBOT* 〙'
 					await urbae.reply(from, kemtul, id)
 					break
 				case prefix + 'liststiker':
@@ -6576,7 +6576,7 @@ _Desc di update oleh : @${chat.groupMetadata.descOwner.replace('@c.us', '')} pad
 						kumtul += '╠➥'
 						kumtul += `${stiklist[i]}\n`
 					}
-					kumtul += '╚═〘 *U R B A E  B O T* 〙'
+					kumtul += '╚═〘 *AdyyBOT* 〙'
 					await urbae.reply(from, kumtul, id)
 					break
 				case prefix + 'saylist':
@@ -6586,7 +6586,7 @@ _Desc di update oleh : @${chat.groupMetadata.descOwner.replace('@c.us', '')} pad
 						kimtil += '╠➥'
 						kimtil += `${saylest[i]}\n`
 					}
-					kimtil += '╚═〘 *U R B A E  B O T* 〙'
+					kimtil += '╚═〘 *AdyyBOT* 〙'
 					await urbae.sendText(from, kimtil)
 					break
 				case prefix + 'addsay': {
