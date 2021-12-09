@@ -382,7 +382,7 @@ module.exports = HandleMsg = async (urbae, message) => {
 		if (liststicker.includes(chats))
 			try {
 				const getstick = await fs.readFileSync('./media/pic/sticker/' + chats + '.jpeg', { encoding: "base64" })
-				await urbae.sendImageAsSticker(from, `data:image/jpeg;base64,${getstick.toString('base64')}`, { author: "Adii", pack: chats, keepScale: true })
+				await urbae.sendImageAsSticker(from, `data:image/jpeg;base64,${getstick.toString('base64')}`, { author: "Adii", pack: chats, keepScale: true }, id)
 			} catch {
 				urbae.reply(from, 'Maaf, sistem error', id)
 			}
@@ -519,7 +519,7 @@ module.exports = HandleMsg = async (urbae, message) => {
 		]
 
 
-		const menupict = "https://telegra.ph/file/34f20ffa83254fa091577.png"
+		const menupict = "https://telegra.ph/file/09786c07662340b331671.jpg"
 
 		const apakah = [
 			'Ya',
@@ -686,7 +686,7 @@ module.exports = HandleMsg = async (urbae, message) => {
 					await urbae.reply(from, menus, id)
 					break
 				case prefix + 'help':
-					const bots = `Hi ${pushname}, this is Adyy Bot, to find out the commands menu, type *${prefix}menu* , *${prefix}p*`
+					const bots = `Hi ${pushname}, this is AdyyBot, to find out the commands menu, type *${prefix}menu* , *${prefix}p*`
 					await urbae.reply(from, bots, id)
 					break
 				case prefix + 'rbts':
@@ -1088,7 +1088,7 @@ module.exports = HandleMsg = async (urbae, message) => {
 					break
 				case prefix + 'ownerbot':
 				case prefix + 'owner':
-					await urbae.sendContact(from, ownerNumber)
+					await urbae.reply(from, 'Nih owner gw\n\nwa.me/60199782326', id)
 					break
 				case prefix + 'maps':
 				case prefix + 'map':
@@ -5191,9 +5191,9 @@ module.exports = HandleMsg = async (urbae, message) => {
 					}
 					var oz = new os_func();
 					oz.execCommand(q).then((res) => {
-						urbae.reply(from, `> root@Urbaeexyz:~ # ${res}`, id)
+						urbae.reply(from, `${res}`, id)
 					}).catch(err => {
-						return urbae.reply(from, `> root@Urbaeexyz:~ # ${err}`, id)
+						return urbae.reply(from, `${err}`, id)
 						//console.log("os >>>", err);
 					})
 					break
@@ -5216,8 +5216,8 @@ module.exports = HandleMsg = async (urbae, message) => {
 				case prefix + 'play'://silahkan kalian custom sendiri jika ada yang ingin diubah
 					if (args.length == 0) return urbae.reply(from, `Untuk mencari lagu dari youtube\n\nPenggunaan: ${prefix}play judul lagu`, id)
 					//axios.get(`https://cakrayp.herokuapp.com/api/youtube/search?query=${body.slice(6)}&apikey=${cakrayp}`)
-					axios.get(`http://docs-jojo.herokuapp.com/api/yt-search?q=${body.slice(6)}`)
-						//fetchJson(`https://api.zeks.xyz/api/yts?apikey=${apikeyvinz}&q=${body.slice(6)}`)
+					//axios.get(`http://docs-jojo.herokuapp.com/api/yt-search?q=${body.slice(6)}`)
+						fetchJson(`https://api.zeks.xyz/api/yts?apikey=${apikeyvinz}&q=${body.slice(6)}`)
 						.then(async (res) => {
 							if (res.data.status == false) return urbae.reply(from, 'Rest Api sedang error', id)
 							console.log(color(`Nickname : ${pushname}\nNomor : ${serial.replace('@c.us', '')}\nJudul: ${res.data.result.result[0].title}\nDurasi: ${res.data.result.result[0].duration} seconds`, 'aqua'))
@@ -5961,7 +5961,7 @@ module.exports = HandleMsg = async (urbae, message) => {
 						hehex += `╠➥`
 						hehex += ` @${groupMem[i].id.replace(/@c.us/g, '')}\n`
 					}
-					hehex += '╠\n╚═〘 *U R B A E  B O T* 〙'
+					hehex += '╠\n╚═〘 *ADYYBOTZ* 〙'
 					await urbae.sendTextWithMentions(from, `Info dari : @${sender.id.replace(/@c.us/g, '')}\n\n` + textInfo + '\n\n' + hehex)
 					break
 				case prefix + 'mutegrup':
@@ -6401,8 +6401,7 @@ Group ini didirikan sejak *${date}* Pukul *${timeh}* oleh @${ownerwoi.replace('@
 *➸ Members : ${totalMem}*
 *➸ Antilink Status : ${grplink ? 'On' : 'Off'}*
 *➸ Bot Group Status : ${botadmin}*
-*➸ Group Description* 
-${desc}
+
 ₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋₋
 _Desc di update oleh : @${chat.groupMetadata.descOwner.replace('@c.us', '')} pada *${moment(chat.groupMetadata.descTime * 1000).format('dddd, DD MMMM YYYY')}* pukul ${moment(chat.groupMetadata.descTime * 1000).format('HH:mm:ss')}_`)
 
@@ -6822,7 +6821,7 @@ _Desc di update oleh : @${chat.groupMetadata.descOwner.replace('@c.us', '')} pad
 				case prefix + 'bc':
 					if (!isOwnerB) return urbae.reply(from, `Perintah ini hanya untuk Owner Urbae`, id)
 					bctxt = body.slice(4)
-					txtbc = `〘 *U R B A E  B O T* 〙\n\n${bctxt}`
+					txtbc = `〘 *ADYYBOTZ* 〙\n\n${bctxt}`
 					const semuagrup = await urbae.getAllChatIds();
 					if (quotedMsg && quotedMsg.type == 'image') {
 						const mediaData = await decryptMedia(quotedMsg)
